@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap');
+
+/* CSS HEX https://coolors.co/000000-14213d-fca311-e5e5e5-ffffff
+--black: #000000ff;
+--oxford-blue: #14213dff;
+--orange-web: #fca311ff;
+--platinum: #e5e5e5ff;
+--white: #ffffffff; */
+
+
+html, body {
+    min-height: 100vh;
+    background: #e5e5e5ff;
+    font-family: 'Lato';
+}
+
+section {
+    width: 50%;
+    margin: auto;
+}
+
+section h1, h2 {
+    text-align: center;
+}
+
+.nav-link {
+    color: red;
+}
+
+div .carousel-caption{
+    background: black;
+    opacity: 0.6;
+}
+
+div .card-body{
+    background: #14213dff;
+    color: white;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.btn-primary {
+    background-color: #fca311ff;
+    border-color: #fca311ff;
+    color: black;
+}
+
+.btn-primary:hover{
+    background-color: #fca311ff;
+    border-color: #fca311ff;
+    color: black;
+    transform: scale(1.03)
+}
+
+.btn-primary:active{
+    background-color: #fca311ff;
+    border-color: #fca311ff;
+    color: black;
+    transform: scale(.98);
+    box-shadow: none !important;
+}
+
+.btn-primary:focus{
+    background-color: #fca311ff;
+    border-color: #fca311ff;
+    color: black;
+    box-shadow: none;
+}
