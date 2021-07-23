@@ -26,14 +26,14 @@ export const getStaticPaths = async() => {
     }
 }
 
-export async function getStaticProps({ params }){
-    const res = await client.getEntries({
+export const getStaticProps = async ({ params }) => {
+    const { items } = await client.getEntries({
         content_type: 'produk',
         'fields.slug': params.slug
     })
 
     return {
-        props: { recipe: items[0]}
+        props: { produk: items[0]}
     }
 }
 

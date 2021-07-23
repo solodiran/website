@@ -1,5 +1,8 @@
 import React from 'react'
 import { createClient } from "contentful";
+import { Container } from 'react-bootstrap';
+import { Image } from 'react-bootstrap';
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
 const client = createClient({
     space: process.env.CONTENTFUL_SPACE_ID,
@@ -23,8 +26,8 @@ export const getStaticPaths = async() => {
     }
 }
 
-export async function getStaticProps({ params }){
-    const res = await client.getEntries({
+export const getStaticProps = async ({ params }) => {
+    const { items } = await client.getEntries({
         content_type: 'wisata',
         'fields.slug': params.slug
     })
@@ -35,9 +38,23 @@ export async function getStaticProps({ params }){
 }
 
 export default function WisataDetails( { wisata }) {
+    const { featured, judul, deskripsi } = wisata.fields 
     return (
-        <div>
-            
-        </div>
+        <Container>
+            <section>
+                <Image
+                src={'https:' + featured.fields.file.url}
+                width={featured.fields.file.image.width}
+                height={featured.fields.file.image.height}
+                alt='Foto Produk'
+                />
+                <h2>{ judul }</h2>
+            </section>
+                <div>{documentToReactComponents(deskripsi)}</div>
+            <section>
+
+
+            </section>
+        </Container>
     )
 }

@@ -1,12 +1,14 @@
-import React from 'react'
+import React from 'react';
 import { createClient } from "contentful";
+import { Image } from 'next/image';
+import { Container } from 'react-bootstrap';
 
 const client = createClient({
     space: process.env.CONTENTFUL_SPACE_ID,
     accessToken: process.env.CONTENTFUL_ACCESS_KEY,
 })
 
-export const getStaticPaths = async() => {
+export const getStaticPaths = async () => {
     const res = await client.getEntries({
         content_type: 'kesenian'
     })
@@ -23,8 +25,8 @@ export const getStaticPaths = async() => {
     }
 }
 
-export async function getStaticProps({ params }){
-    const res = await client.getEntries({
+export const getStaticProps = async ({ params }) => {
+    const { items } = await client.getEntries({
         content_type: 'kesenian',
         'fields.slug': params.slug
     })
@@ -35,9 +37,23 @@ export async function getStaticProps({ params }){
 }
 
 export default function KesenianDetails( { kesenian }) {
+    const { featured, judul, deskripsi } = kesenian.fields 
     return (
-        <div>
-            
-        </div>
+        <Container>
+            <section>
+                <Image
+                src={'https:' + featured.fields.file.url}
+                width={featured.fields.file.image.width}
+                height={featured.fields.file.image.height}
+                alt='Foto Produk'
+                />
+                <h2>{ judul }</h2>
+            </section>
+                <div>{documentToReactComponents(deskripsi)}</div>
+            <section>
+
+
+            </section>
+        </Container>
     )
 }
