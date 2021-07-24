@@ -13,12 +13,12 @@ export async function getStaticProps() {
 
   return {
       props: {
-          produk: res.items
+          wisata: res.items
       }
   }
 }
 export default function Wisata({ wisata }) {
-    
+    console.log(wisata)
     return (
         <div className='list-wisata'>
             {wisata.map(wisata => (

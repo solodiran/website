@@ -10,7 +10,7 @@ export default function Home() {
     <Head>
       <title>Desa Solodiran</title>
     </Head> 
-      <Carousel fade nextLabel prevLabel>
+      <Carousel fade nextLabel='' prevLabel='' >
         <Carousel.Item>
         <Image src="https://picsum.photos/2000/797" alt="Illust" width={2000} height={797} /> 
           <Carousel.Caption>

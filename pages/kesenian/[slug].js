@@ -1,7 +1,8 @@
 import React from 'react';
 import { createClient } from "contentful";
-import { Image } from 'next/image';
+import Image from 'next/image';
 import { Container } from 'react-bootstrap';
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
 const client = createClient({
     space: process.env.CONTENTFUL_SPACE_ID,
@@ -43,8 +44,8 @@ export default function KesenianDetails( { kesenian }) {
             <section>
                 <Image
                 src={'https:' + featured.fields.file.url}
-                width={featured.fields.file.image.width}
-                height={featured.fields.file.image.height}
+                width={featured.fields.file.details.image.width}
+                height={featured.fields.file.details.image.height}
                 alt='Foto Produk'
                 />
                 <h2>{ judul }</h2>

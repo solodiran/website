@@ -1,4 +1,4 @@
-import Image from "next/image"
+import React from 'react';
 import { createClient } from "contentful";
 import KesenianCard from "../../components/KesenianCard"
 
@@ -18,14 +18,14 @@ export async function getStaticProps() {
   }
 }
 
-const Kesenian = () => {
-    return ( 
+export default function Kesenian({ kesenian }) {
+    console.log(kesenian)
+    
+    return (
         <div className='list-kesenian'>
             {kesenian.map(kesenian => (
-                <KesenianCard key={kesenian.sys.id} kesenian={kesenian}/>
+                <KesenianCard key={kesenian.sys.id} kesenian={ kesenian }/>
             ))}
         </div>
-     );
+    )
 }
- 
-export default Kesenian;

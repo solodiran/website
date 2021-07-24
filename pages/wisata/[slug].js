@@ -44,8 +44,8 @@ export default function WisataDetails( { wisata }) {
             <section>
                 <Image
                 src={'https:' + featured.fields.file.url}
-                width={featured.fields.file.image.width}
-                height={featured.fields.file.image.height}
+                width={featured.fields.file.details.image.width}
+                height={featured.fields.file.details.image.height}
                 alt='Foto Produk'
                 />
                 <h2>{ judul }</h2>
