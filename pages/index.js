@@ -1,5 +1,4 @@
 import Head from "next/head"
-import Link from "next/link"
 import Image from 'next/image'
 import { Container, Carousel, Row, Col, Card, Button } from "react-bootstrap";
 
@@ -42,17 +41,7 @@ export default function Home() {
             <Card.Img src='https://picsum.photos/500'></Card.Img>
             <Card.Body>
               <Card.Title>Wisata</Card.Title>
-              <Button>Temukan lebih lanjut</Button>
-            </Card.Body>
-          </Card>
-        </Col>
-
-        <Col sm>
-          <Card className="text-center">
-            <Card.Img src='https://picsum.photos/500'/>
-            <Card.Body>
-              <Card.Title>Galeri</Card.Title>
-              <Button>Temukan lebih lanjut</Button>
+              <Button href="/wisata">Temukan lebih lanjut</Button>
             </Card.Body>
           </Card>
         </Col>
@@ -62,7 +51,7 @@ export default function Home() {
             <Card.Img src='https://picsum.photos/500'/>
             <Card.Body>
               <Card.Title>Produk</Card.Title>
-              <Button>Temukan lebih lanjut</Button>
+              <Button href="/produk">Temukan lebih lanjut</Button>
             </Card.Body>
           </Card>
         </Col>
@@ -72,7 +61,7 @@ export default function Home() {
             <Card.Img src='https://picsum.photos/500'/>
             <Card.Body>
               <Card.Title>Kesenian</Card.Title>
-              <Button>Temukan lebih lanjut</Button>
+              <Button href="kesenian">Temukan lebih lanjut</Button>
             </Card.Body>
           </Card>
         </Col>

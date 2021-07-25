@@ -1,26 +1,19 @@
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { Col, Card, Button } from 'react-bootstrap'
 
 export default function produkCard({produk}) {
     const { thumbnail, judul, slug} = produk.fields
-    console.log(produk)
     return (
-        <div className="card">
-            <div className="thumbnail">
-            <Image
-                src={'https:' + thumbnail.fields.file.url}
-                width={thumbnail.fields.file.details.image.width}
-                height={thumbnail.fields.file.details.image.height}
-                alt='Foto Produk'
-                />
-            </div>
-            <div className="content">
-                <h4>{judul}</h4>
-                <div className="action">
-                    <Link href={'/produk/' + slug } ><a>Lihat Produk</a></Link>
-                </div>
-            </div>
-        </div>
+        <Col xs={6} md={4} id ="card">
+            <Card className="text-center">
+                <Card.Img src={'https:' + thumbnail.fields.file.url}/>
+                <Card.Body>
+                    <Card.Title>{judul}</Card.Title>
+                    <Button href={'/produk/' + slug }>Temukan lebih lanjut</Button>
+                </Card.Body>
+            </Card>
+        </Col>
     )
 }

@@ -38,7 +38,7 @@ export const getStaticProps = async ({ params }) => {
 }
 
 export default function ProdukDetails( { produk }) {
-    const { featured, judul, deskripsi } = produk.fields 
+    const { featured, judul, deskripsi } = produk.fields
     return (
         <Container>
             <section>
@@ -51,10 +51,12 @@ export default function ProdukDetails( { produk }) {
                 <h2>{ judul }</h2>
             </section>
                 <div>{documentToReactComponents(deskripsi)}</div>
-            <section>
-
-
-            </section>
+                <style jsx>{`
+                div {
+                    text-align: justify;
+                }
+            `}
+            </style>
         </Container>
     )
 }

@@ -1,8 +1,16 @@
 const Footer = () => {
     return (  
-        <footer>
+        <footer >
             <p>Copyright 2021</p>
-        </footer>
+
+            <style jsx>{`
+            p {
+                text-align: center;
+                text-color: #ffffffff;
+            }
+            `}
+            </style>
+        </footer>        
     );
 }
  

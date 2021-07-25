@@ -1,6 +1,7 @@
 import React from 'react'
 import { createClient } from "contentful";
 import WisataCard from "../../components/WisataCard"
+import { Container, Row } from 'react-bootstrap';
 
 export async function getStaticProps() {
 
@@ -18,12 +19,14 @@ export async function getStaticProps() {
   }
 }
 export default function Wisata({ wisata }) {
-    console.log(wisata)
     return (
-        <div className='list-wisata'>
-            {wisata.map(wisata => (
-                <WisataCard key={wisata.sys.id} wisata={wisata}/>
-            ))}
-        </div>
+        <Container>
+            <h2>Wisata Solodiran</h2>
+            <Row md={2} lg={4} className='list-wisata'>
+                {wisata.map(wisata => (
+                    <WisataCard key={wisata.sys.id} wisata={wisata}/>
+                ))}
+            </Row>
+        </Container>
     )
 }

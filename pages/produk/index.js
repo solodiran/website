@@ -1,6 +1,7 @@
 import React from 'react'
 import { createClient } from "contentful";
 import ProdukCard from '../../components/ProdukCard';
+import { Container, Row } from 'react-bootstrap';
 
 export async function getStaticProps() {
 
@@ -21,10 +22,13 @@ export default function Produk({produk}) {
     console.log(produk)
     
     return (
-        <div className='list-produk'>
-            {produk.map(produk => (
-                <ProdukCard key={produk.sys.id} produk={produk}/>
-            ))}
-        </div>
+        <Container>
+            <h2>Produk Solodiran</h2>
+            <Row md={2} lg={4} className='list-produk'>
+                {produk.map(produk => (
+                    <ProdukCard key={produk.sys.id} produk={produk}/>
+                ))}
+            </Row>
+        </Container>
     )
 }

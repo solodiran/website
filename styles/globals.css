@@ -23,10 +23,6 @@ section h1, h2 {
     text-align: center;
 }
 
-.nav-link {
-    color: red;
-}
-
 div .carousel-caption{
     background: black;
     opacity: 0.6;

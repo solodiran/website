@@ -51,10 +51,13 @@ export default function WisataDetails( { wisata }) {
                 <h2>{ judul }</h2>
             </section>
                 <div>{documentToReactComponents(deskripsi)}</div>
-            <section>
 
-
-            </section>
+            <style jsx>{`
+                div {
+                    text-align: justify;
+                }
+            `}
+            </style>
         </Container>
     )
 }
