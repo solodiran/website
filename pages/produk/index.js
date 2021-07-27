@@ -18,17 +18,27 @@ export async function getStaticProps() {
       }
   }
 }
-export default function Produk({produk}) {
-    console.log(produk)
+export default function Produk({ produk }) {
     
     return (
-        <Container>
-            <h2>Produk Solodiran</h2>
-            <Row md={2} lg={4} className='list-produk'>
+        <div>
+            <h2 className='header'>Produk Solodiran</h2>
+            <div className='list-produk'>
                 {produk.map(produk => (
                     <ProdukCard key={produk.sys.id} produk={produk}/>
                 ))}
-            </Row>
-        </Container>
+            </div>
+            <style jsx>{`
+            html {
+                display: grid;
+                min-height: 100%;
+              }
+              
+              body {
+                display: grid;
+              }
+            `}
+            </style>
+        </div>
     )
 }

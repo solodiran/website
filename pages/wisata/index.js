@@ -20,13 +20,24 @@ export async function getStaticProps() {
 }
 export default function Wisata({ wisata }) {
     return (
-        <Container>
-            <h2>Wisata Solodiran</h2>
-            <Row md={2} lg={4} className='list-wisata'>
+        <div>
+            <h2 className='header'>Wisata Solodiran</h2>
+            <div className='list-wisata'>
                 {wisata.map(wisata => (
                     <WisataCard key={wisata.sys.id} wisata={wisata}/>
                 ))}
-            </Row>
-        </Container>
+            </div>
+            <style jsx>{`
+            html {
+                display: grid;
+                min-height: 100%;
+              }
+              
+              body {
+                display: grid;
+              }
+            `}
+            </style>
+        </div>
     )
 }

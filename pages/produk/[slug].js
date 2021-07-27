@@ -1,8 +1,9 @@
 import React from 'react'
 import { createClient } from "contentful";
-import { Container } from 'react-bootstrap';
-import { Image } from 'react-bootstrap';
+import Image from 'next/image';
+import Link from 'next/link';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import { motion } from "framer-motion";
 
 const client = createClient({
     space: process.env.CONTENTFUL_SPACE_ID,
@@ -40,23 +41,44 @@ export const getStaticProps = async ({ params }) => {
 export default function ProdukDetails( { produk }) {
     const { featured, judul, deskripsi } = produk.fields
     return (
-        <Container>
-            <section>
-                <Image
-                src={'https:' + featured.fields.file.url}
-                width={featured.fields.file.details.image.width}
-                height={featured.fields.file.details.image.height}
-                alt='Foto Produk'
-                />
-                <h2>{ judul }</h2>
-            </section>
-                <div>{documentToReactComponents(deskripsi)}</div>
-                <style jsx>{`
-                div {
-                    text-align: justify;
-                }
-            `}
-            </style>
-        </Container>
+        <div>
+            <div className='fullscreen'>
+                <div className='product'>
+                    <section className='product-image'>
+                        <Image src={'https:' + featured.fields.file.url}
+                        width={featured.fields.file.details.image.width}
+                        height={featured.fields.file.details.image.height}
+                        alt='Foto Produk'
+                        layout='intrinsic'
+                        className='img'
+                        />
+                    </section>
+                    <section className='product-details'>
+                        <div className='inner'>
+                            <Link href='/produk' passHref>
+                                <div>
+                                    <a className='go-back'>Kembali ke produk</a>
+                                </div>
+                            </Link>
+                            <h2>{ judul }</h2>
+                            <div className='contact-info'>
+                                <span>Penjual:</span>
+                                <br/>
+                                <span>Harga: Rp </span>
+                            </div>
+                            <div className='desc'>{documentToReactComponents(deskripsi)}</div>
+                            <div className='btn-row'>
+                                <Link href='https://shopee.co.id' passHref>
+                                    <Image src='/shopee.svg' width={45} height={45} alt='icon Shopee' className='btn'/>
+                                </Link>
+                                <Link href='https://google.com' passHref>
+                                    <Image src='/whatsapp.svg' width={45} height={45} alt='icon Whatsapp' className='btn'/>
+                                </Link>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
     )
 }

@@ -1,19 +1,23 @@
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Col, Card, Button } from 'react-bootstrap'
+import styles from './ProdukCard.module.scss'
 
 export default function produkCard({produk}) {
     const { thumbnail, judul, slug} = produk.fields
     return (
-        <Col xs={6} md={4} id ="card">
-            <Card className="text-center">
-                <Card.Img src={'https:' + thumbnail.fields.file.url}/>
-                <Card.Body>
-                    <Card.Title>{judul}</Card.Title>
-                    <Button href={'/produk/' + slug }>Temukan lebih lanjut</Button>
-                </Card.Body>
-            </Card>
-        </Col>
+        <div className={styles.container}>
+            <div className='image'>
+                <Image src={'https:' + thumbnail.fields.file.url} height={260} width={300} alt='Foto Produk' layout='intrinsic' />
+            </div>
+            <div className={styles.details}>
+                <h3>{ judul }</h3>
+                <div className={styles.btn}>
+                    <Link href={'/produk/' + slug } passHref>
+                        <button> Lihat lebih detail</button>
+                    </Link>
+                </div>
+            </div>
+        </div>
     )
 }

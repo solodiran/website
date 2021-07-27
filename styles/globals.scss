@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,700,900&display=swap");
+
+/* CSS HEX https://coolors.co/000000-14213d-fca311-e5e5e5-ffffff
+--black: #000000ff;
+--oxford-blue: #14213dff;
+--orange-web: #fca311ff;
+--platinum: #e5e5e5ff;
+--white: #ffffffff; 
+--raw-sienna: #d38b5d
+*/
+
+
+body {
+    font-family: "Poppins", "Lato", BlinkMacSystemFont, "Segoe UI", Roboto,
+      Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    background: #f1f3f5;
+    padding: 0;
+    margin: 0;
+  }
+
+.header {
+  text-align: center;
+  font-weight: 500;
+}
+div .card-body{
+    background: #14213dff;
+    color: white;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+div .carousel-caption{
+    background: black;
+    opacity: 0.6;
+  }
+
+.list-produk {
+    background: #E5BA9F;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px 20px;
+    @media only screen and (max-width: 1200px) {
+      display: block;
+    }
+
+}
+
+.list-wisata {
+  background: #3c3c3b;
+}
+
+.btn-primary {
+    background-color: #fca311ff;
+    border-color: #fca311ff;
+    color: black;
+
+    :hover{
+        background-color: #fca311ff;
+        border-color: #fca311ff;
+        color: black;
+        transform: scale(1.03)
+    }
+
+    :active{
+        background-color: #fca311ff;
+        border-color: #fca311ff;
+        color: black;
+        transform: scale(.98);
+        box-shadow: none !important;
+    }
+
+    :focus{
+        background-color: #fca311ff;
+        border-color: #fca311ff;
+        color: black;
+        box-shadow: none;  
+    }
+}
+
