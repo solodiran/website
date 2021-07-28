@@ -36,7 +36,7 @@ div .carousel-caption{
   }
 
 .list-produk {
-    background: #E5BA9F;
+    background: #3c3c3b;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 20px 20px;
@@ -48,6 +48,7 @@ div .carousel-caption{
 
 .list-wisata {
   background: #3c3c3b;
+  grid-gap: 20px 20px;
 }
 
 .btn-primary {
