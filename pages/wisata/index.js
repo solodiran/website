@@ -1,7 +1,6 @@
-import React from 'react'
+import React from 'react';
 import { createClient } from "contentful";
-import WisataCard from "../../components/WisataCard"
-import { Container, Row } from 'react-bootstrap';
+import WisataCard from "../../components/WisataCard";
 
 export async function getStaticProps() {
 

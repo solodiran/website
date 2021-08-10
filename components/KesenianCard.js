@@ -5,7 +5,6 @@ import styles from './KesenianCard.module.scss'
 
 export default function KesenianCard({kesenian}) {
     const { thumbnail, judul, slug} = kesenian.fields
-    console.log(kesenian)
     return (
         <div className={styles.container}>
             <div className={styles.img}>

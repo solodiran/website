@@ -1,6 +1,6 @@
 import React from 'react';
 import { createClient } from "contentful";
-import KesenianCard from "../../components/KesenianCard"
+import BeritaCard from "../../components/BeritaCard"
 
 export async function getStaticProps() {
 
@@ -9,23 +9,23 @@ export async function getStaticProps() {
     accessToken: process.env.CONTENTFUL_ACCESS_KEY,
   })
 
-  const res = await client.getEntries({ content_type: 'kesenian'})
+  const res = await client.getEntries({ content_type: 'berita'})
 
   return {
       props: {
-          kesenian: res.items
+          berita: res.items
       }
   }
 }
 
-export default function Kesenian({ kesenian }) {
+export default function Berita({ berita }) {
     
     return (
         <div>
-            <h2 className='header'>Kesenian Solodiran</h2>
-            <div className='list-kesenian'>
-                {kesenian.map(kesenian => (
-                    <KesenianCard key={kesenian.sys.id} kesenian={kesenian}/>
+            <h2 className='header'>Berita Solodiran</h2>
+            <div className='list-berita'>
+                {berita.map(berita => (
+                    <BeritaCard key={berita.sys.id} berita={berita}/>
                 ))}
             </div>
             <style jsx>{`

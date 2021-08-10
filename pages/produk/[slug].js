@@ -79,6 +79,89 @@ export default function ProdukDetails( { produk }) {
                     </section>
                 </div>
             </div>
+            <style jsx>{`
+            .fullscreen {
+                height: 100vh;
+                margin: 2rem 0;
+           }
+            .fullscreen .product {
+                height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+           }
+            @media only screen and (max-width: 1000px) {
+                .fullscreen .product {
+                    height: 50%;
+                    flex-direction: column;
+               }
+           }
+            .fullscreen .product .product-image {
+                width: 50%;
+                height: 100%;
+                background: #dfdfdf;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+           }
+            .fullscreen .product .product-image .img {
+                cursor: move;
+                width: 50%;
+           }
+            .fullscreen .product .product-details {
+                width: 50%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+           }
+            @media only screen and (max-width: 1000px) {
+                .fullscreen .product .product-details {
+                    margin-top: 10rem;
+               }
+           }
+            .fullscreen .product .product-details .inner {
+                width: 30em;
+                position: relative;
+           }
+            .fullscreen .product .product-details .inner .go-back {
+                cursor: pointer;
+                color: #282828;
+                text-decoration: none;
+                text-align: left;
+                position: absolute;
+                top: -7.75em;
+                left: 0;
+           }
+            @media only screen and (max-width: 1000px) {
+                .fullscreen .product .product-details .inner .go-back {
+                    top: -1.5em;
+               }
+           }
+            .fullscreen .product .product-details .inner .desc {
+                color: #424550;
+                font-weight: 300;
+                text-align: justify;
+           }
+            .fullscreen .product .product-details .inner .btn-row {
+                margin-top: 2rem;
+                display: flex;
+                align-items: center;
+           }
+            .fullscreen .product .product-details .inner .btn-row .btn {
+                cursor: pointer;
+                margin-left: 3rem;
+                border: none;
+                border-radius: 8px;
+                height: 3em;
+                font-size: 0.875rem;
+                text-transform: uppercase;
+                font-weight: 500;
+                letter-spacing: 0.06rem;
+           }
+            
+            `}</style>
         </div>
     )
 }

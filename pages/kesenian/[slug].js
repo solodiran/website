@@ -1,7 +1,6 @@
 import React from 'react';
 import { createClient } from "contentful";
 import Image from 'next/image';
-import { Container } from 'react-bootstrap';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
 const client = createClient({
@@ -40,24 +39,38 @@ export const getStaticProps = async ({ params }) => {
 export default function KesenianDetails( { kesenian }) {
     const { featured, judul, deskripsi } = kesenian.fields 
     return (
-        <Container>
-            <section>
-                <Image
-                src={'https:' + featured.fields.file.url}
-                width={featured.fields.file.details.image.width}
-                height={featured.fields.file.details.image.height}
-                alt='Foto Produk'
-                />
-                <h2>{ judul }</h2>
+        <div className='container'>
+            <section className='body'>
+                <div className='image'>
+                    <Image
+                    src={'https:' + featured.fields.file.url}
+                    width={featured.fields.file.details.image.width}
+                    height={featured.fields.file.details.image.height}
+                    layout='intrinsic'
+                    alt='Foto Kesenian'
+                    />
+                </div>
+                <h2>{ judul }</h2>  
+                <div className='text'>{documentToReactComponents(deskripsi)}</div>
             </section>
-                <div>{documentToReactComponents(deskripsi)}</div>
-                
+
             <style jsx>{`
-                div {
+                .container {
+                    display: flex; // make us of Flexbox
+                    align-items: center; // does vertically center the desired content
+                    justify-content: center; // horizontally centers single line items
+                    text-align: center; 
+                }
+                
+                .image {
+                    max-height: 50%;
+                }
+                
+                .text {
                     text-align: justify;
                 }
             `}
             </style>
-        </Container>
+        </div>
     )
 }

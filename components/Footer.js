@@ -1,6 +1,6 @@
 const Footer = () => {
     return (  
-        <footer >
+        <footer>
             <p>Copyright 2021</p>
 
             <style jsx>{`
@@ -8,6 +8,11 @@ const Footer = () => {
                 text-align: center;
                 text-color: #ffffffff;
             }
+            @media only screen and (max-width: 1000px) {
+                footer {
+                    display: none;
+                }
+               }
             `}
             </style>
         </footer>        
