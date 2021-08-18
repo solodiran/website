@@ -3,7 +3,7 @@ const Footer = () => {
         <footer>
             <p>Copyright 2021</p>
 
-            <style jsx>{`
+            {/* <style jsx>{`
             p {
                 text-align: center;
                 text-color: #ffffffff;
@@ -14,7 +14,7 @@ const Footer = () => {
                 }
                }
             `}
-            </style>
+            </style> */}
         </footer>        
     );
 }

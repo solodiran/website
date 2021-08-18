@@ -19,7 +19,7 @@ export async function getStaticProps() {
 }
 export default function Wisata({ wisata }) {
     return (
-        <div>
+        <div className='container'>
             <h2 className='header'>Wisata Solodiran</h2>
             <div className='list-wisata'>
                 {wisata.map(wisata => (
@@ -34,6 +34,9 @@ export default function Wisata({ wisata }) {
               
               body {
                 display: grid;
+              }
+              .container {
+                margin-bottom: 6em;
               }
             `}
             </style>

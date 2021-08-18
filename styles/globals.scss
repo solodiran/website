@@ -1,15 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap');
 @import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,700,900&display=swap");
 
-/* CSS HEX https://coolors.co/000000-14213d-fca311-e5e5e5-ffffff
---black: #000000ff;
---oxford-blue: #14213dff;
---orange-web: #fca311ff;
---platinum: #e5e5e5ff;
---white: #ffffffff; 
---raw-sienna: #d38b5d
-*/
-
+html {
+  min-height: 100vh;
+  position: relative;
+}
 
 body {
     font-family: "Poppins", "Lato", BlinkMacSystemFont, "Segoe UI", Roboto,
@@ -17,14 +12,30 @@ body {
     background: #f1f3f5;
     padding: 0;
     margin: 0;
+    margin-bottom: 4em;
   }
 
 .header {
   text-align: center;
   font-weight: 500;
 }
+
+footer {
+  p {
+    text-align: center;
+}
+  // @media only screen and (max-width: 1000px) {
+  //       display: none;
+  // }
+  // position: absolute;
+  // bottom:0;
+  // width:100%;
+  // height:2em;   /* Height of the footer */
+  // background: #f1f3f5;
+}
+
 div .card-body{
-    background: #14213dff;
+    background: #3c3c3b;
     color: white;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
@@ -51,31 +62,54 @@ div .carousel-caption{
   grid-gap: 20px 20px;
 }
 
-.btn-primary {
-    background-color: #fca311ff;
-    border-color: #fca311ff;
-    color: black;
-
-    :hover{
-        background-color: #fca311ff;
-        border-color: #fca311ff;
-        color: black;
-        transform: scale(1.03)
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  @media only screen and (max-width: 1200px) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+  .cards {
+    position: relative;
+    margin-top: 2.5em;
+    margin-bottom: 2.5em;
+    // background: #3c3c3b;
+    @media only screen and (max-width: 1200px) {
+      margin-bottom: 6em;
     }
 
-    :active{
-        background-color: #fca311ff;
-        border-color: #fca311ff;
-        color: black;
-        transform: scale(.98);
-        box-shadow: none !important;
-    }
+    .btn{
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin-top: 4em;
+      margin-bottom: 4em;
 
-    :focus{
-        background-color: #fca311ff;
-        border-color: #fca311ff;
-        color: black;
-        box-shadow: none;  
+      h3 {
+        text-align: center;
+      }
+
+      button {
+        background: darken(#3c3c3b, 10%);
+        padding: 5px;
+        display: inline-block;
+        outline: 0;
+        border: 0;
+        margin: auto;
+        border-radius: 2px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #f1f3f5;
+        cursor: pointer;
+            &:hover {
+            background: lighten(#3c3c3b, 20%);
+            transition: all .4s ease-in-out;
+            }
+        // @media only screen and (max-width: 1000px) {
+        //   display: block;
+        //   // width: 100%;
+        // }
     }
+    }
+  }
 }
-

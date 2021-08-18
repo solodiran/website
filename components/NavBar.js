@@ -13,16 +13,21 @@ const NavBar = () => {
                     </Nav.Item>
  
                     <Nav.Item>
-                        <Nav.Link href='/kesenian'>Kesenian</Nav.Link>
+                        <Nav.Link href='/produk'>Produk</Nav.Link>
                     </Nav.Item>
 
                     <Nav.Item>
-                        <Nav.Link href='/produk'>Produk</Nav.Link>
+                        <Nav.Link href='/berita'>Berita</Nav.Link>
+                    </Nav.Item>
+
+                    <Nav.Item>
+                        <Nav.Link href='/kesenian'>Kesenian</Nav.Link>
                     </Nav.Item>
 
                     <Nav.Item>
                         <Nav.Link href='/wisata'>Wisata</Nav.Link>
                     </Nav.Item>
+
                 </Nav>
             </Container>
         </Navbar>

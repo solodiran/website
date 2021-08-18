@@ -1,11 +1,12 @@
-import Head from "next/head"
-import Image from 'next/image'
-import { Container, Carousel, Row, Col, Card, Button } from "react-bootstrap";
+import Head from "next/head";
+import Image from 'next/image';
+import Link from "next/link";
+import { Container, Carousel} from "react-bootstrap";
 
 
 export default function Home() {
   return (
-  <Container fluid>
+  <div className='container'>
     <Head>
       <title>Desa Solodiran</title>
     </Head> 
@@ -35,37 +36,61 @@ export default function Home() {
         </Carousel.Item>
       </Carousel>
 
-      <Row> {/* Col cards */}
-        <Col sm>
-          <Card className="text-center">
-            <Card.Img src='https://picsum.photos/500'></Card.Img>
-            <Card.Body>
-              <Card.Title>Wisata</Card.Title>
-              <Button href="/wisata">Temukan lebih lanjut</Button>
-            </Card.Body>
-          </Card>
-        </Col>
+      <div className='row'>
+        <div className='cards'>
+          <div className='image'>
+            <Image src='https://picsum.photos/500'  alt='foto produk' width={500} height={500} layout='intrinsic'/>
+          </div>
+          <div className='btn'>
+            <h3>Produk</h3>
+            <Link href={'/produk'} passHref>
+              <button> Lihat lebih detail</button>
+            </Link>
+          </div>
+        </div>
 
-        <Col sm>
-          <Card className="text-center">
-            <Card.Img src='https://picsum.photos/500'/>
-            <Card.Body>
-              <Card.Title>Produk</Card.Title>
-              <Button href="/produk">Temukan lebih lanjut</Button>
-            </Card.Body>
-          </Card>
-        </Col>
+        <div className='cards'>
+          <div className='image'>
+            <Image src='https://picsum.photos/500'  alt='foto berita' width={500} height={500} layout='intrinsic'/>
+          </div>
+          <div className='btn'>
+            <h3>Berita</h3>
+            <Link href={'/berita'} passHref>
+              <button> Lihat lebih detail</button>
+            </Link>
+          </div>
+        </div>
 
-        <Col sm>
-          <Card className="text-center">
-            <Card.Img src='https://picsum.photos/500'/>
-            <Card.Body>
-              <Card.Title>Kesenian</Card.Title>
-              <Button href="kesenian">Temukan lebih lanjut</Button>
-            </Card.Body>
-          </Card>
-        </Col>
-      </Row>
-    </Container> 
+        <div className='cards'>
+          <div className='image'>
+            <Image src='https://picsum.photos/500'  alt='foto kesenian' width={500} height={500} layout='intrinsic'/>
+          </div>
+          <div className='btn'>
+            <h3>Kesenian</h3>
+            <Link href={'/kesenian'} passHref>
+              <button> Lihat lebih detail</button>
+            </Link>
+          </div>
+        </div>
+
+        <div className='cards'>
+          <div className='image'>
+            <Image src='https://picsum.photos/500'  alt='foto wisata' width={500} height={500} layout='intrinsic'/>
+          </div>
+          <div className='btn'>
+            <h3>Wisata</h3>
+            <Link href={'/wisata'} passHref>
+              <button> Lihat lebih detail</button>
+            </Link>
+          </div>
+        </div>
+      </div>
+      <style jsx>{`
+      .container {
+        margin-bottom: 6em;
+      }
+      `}
+      </style>
+    </div> 
   )
 }

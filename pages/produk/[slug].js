@@ -39,9 +39,9 @@ export const getStaticProps = async ({ params }) => {
 }
 
 export default function ProdukDetails( { produk }) {
-    const { featured, judul, deskripsi } = produk.fields
+    const { featured, judul, deskripsi, penjual, harga, shopee, whatsapp } = produk.fields
     return (
-        <div>
+        <div className='container'>
             <div className='fullscreen'>
                 <div className='product'>
                     <section className='product-image'>
@@ -62,16 +62,16 @@ export default function ProdukDetails( { produk }) {
                             </Link>
                             <h2>{ judul }</h2>
                             <div className='contact-info'>
-                                <span>Penjual:</span>
+                                <span>Penjual: {penjual}</span>
                                 <br/>
-                                <span>Harga: Rp </span>
+                                <span>Harga: Rp{harga} </span>
                             </div>
                             <div className='desc'>{documentToReactComponents(deskripsi)}</div>
                             <div className='btn-row'>
-                                <Link href='https://shopee.co.id' passHref>
+                                <Link href={'https://bit.ly/' + shopee}  passHref>
                                     <Image src='/shopee.svg' width={45} height={45} alt='icon Shopee' className='btn'/>
                                 </Link>
-                                <Link href='https://google.com' passHref>
+                                <Link href={'https://bit.ly/' + whatsapp} passHref>
                                     <Image src='/whatsapp.svg' width={45} height={45} alt='icon Whatsapp' className='btn'/>
                                 </Link>
                             </div>
@@ -80,6 +80,11 @@ export default function ProdukDetails( { produk }) {
                 </div>
             </div>
             <style jsx>{`
+            html {
+            min-height: 100vh;
+            position: relative;
+            }
+
             .fullscreen {
                 height: 100vh;
                 margin: 2rem 0;
@@ -160,6 +165,12 @@ export default function ProdukDetails( { produk }) {
                 font-weight: 500;
                 letter-spacing: 0.06rem;
            }
+           @media only screen and (max-width: 1000px) {
+            .container {
+                margin-bottom: 12em;
+              }
+       }
+        
             
             `}</style>
         </div>

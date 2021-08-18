@@ -1,0 +1,80 @@
+.container {
+    display: flex;
+    position: relative;
+    margin: 2.5em auto;
+    overflow: hidden;
+    width: 60em;
+    height: 30em;
+    background: #f1f3f5;
+    box-shadow: 5px 5px 15px rgba(#3c3c3b, .5);
+    border-radius: 10px;
+
+    @media only screen and (max-width: 1000px) {
+      width: 30em;
+      height: 60em;
+      flex-direction: column;
+    }
+
+    .img {
+      height: 20em;
+      width: 30em;
+    }
+
+    .details{
+      position: relative;
+      text-transform: none;
+      letter-spacing: 0;
+      margin: auto;
+      font-size: .7em;
+      line-height: 1.6em;
+      text-align: justify;
+      max-width: 50%;
+
+      @media only screen and (max-width: 1000px) {
+        max-width: 100%;
+      }
+
+      h3 {
+        text-align: center;
+      }
+
+      p {
+        text-align: justify;
+        padding-top : 10px;
+        margin : 1em;
+        font-size : 0.95rem;
+        line-height: 150%;
+        color : #4B4B4B;
+      }
+  
+      .btn{
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin-top: 4em;
+
+        button {
+            background: darken(#3c3c3b, 10%);
+            padding: 10px;
+            display: inline-block;
+            outline: 0;
+            border: 0;
+            margin: auto;
+            margin-left: 2.5em;
+            border-radius: 2px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #f1f3f5;
+            cursor: pointer;
+                &:hover {
+                background: lighten(#3c3c3b, 20%);
+                transition: all .4s ease-in-out;
+                }
+            @media only screen and (max-width: 1000px) {
+              display: block;
+              // width: 100%;
+            }
+    }
+  }
+  }
+  }

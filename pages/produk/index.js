@@ -30,13 +30,20 @@ export default function Produk({ produk }) {
             </div>
             <style jsx>{`
             html {
-                display: grid;
-                min-height: 100%;
+              min-height: 100vh;
+              position: relative;
               }
               
               body {
                 display: grid;
+                margin-bottom: 4em;
               }
+              @media only screen and (max-width: 1000px) {
+                footer {
+                  display: none;
+               }
+             }
+              
             `}
             </style>
         </div>

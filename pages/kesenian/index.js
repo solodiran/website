@@ -21,7 +21,7 @@ export async function getStaticProps() {
 export default function Kesenian({ kesenian }) {
     
     return (
-        <div>
+        <div >
             <h2 className='header'>Kesenian Solodiran</h2>
             <div className='list-kesenian'>
                 {kesenian.map(kesenian => (
@@ -34,7 +34,7 @@ export default function Kesenian({ kesenian }) {
                 min-height: 100%;
               }
               
-              body {
+            body {
                 display: grid;
               }
             `}
