@@ -21,7 +21,7 @@ export async function getStaticProps() {
 export default function Produk({ produk }) {
     
     return (
-        <div>
+        <div className='prod'>
             <h2 className='header'>Produk Solodiran</h2>
             <div className='list-produk'>
                 {produk.map(produk => (

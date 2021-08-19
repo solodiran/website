@@ -1,0 +1,120 @@
+html {
+    position: relative;
+  }
+  
+  .container {
+    min-width: 100vw;
+  }
+  
+  .fullscreen {
+    height: 100vh;
+    min-width: 100vw;
+    margin: 2rem 0;
+  
+    .product {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+  
+      .product-image {
+        width: 50%;
+        height: 100%;
+        background: #dfdfdf;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+  
+        .img {
+          cursor: move;
+          width: 50%;
+        }
+      }
+  
+      .product-details {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+  
+        .inner {
+          width: 30em;
+          position: relative;
+  
+          .go-back {
+            cursor: pointer;
+            color: #282828;
+            text-decoration: none;
+            text-align: left;
+            position: absolute;
+            top: -7.75em;
+            left: 0;
+          }
+  
+          .desc {
+            color: #424550;
+            font-weight: 300;
+            text-align: justify;
+          }
+  
+          .btn-row {
+            margin-top: 2rem;
+            display: flex;
+            align-items: center;
+  
+            .btn {
+              cursor: pointer;
+              margin-left: 3rem;
+              border: none;
+              border-radius: 8px;
+              height: 3em;
+              font-size: 0.875rem;
+              text-transform: uppercase;
+              font-weight: 500;
+              letter-spacing: 0.06rem;
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  @media only screen and (max-width: 1000px) {
+    .product {
+      flex-direction: column;
+      width: 50em;
+    }
+    .fullscreen .product .product-details {
+        margin-top: 10rem;
+    }
+
+    .product-details .product-image {
+        width: 100%;
+        height: 100%;
+    }
+
+    .fullscreen .product .product-details .inner .go-back {
+        top: -1.5em;
+      }
+    .container {
+          margin-bottom: 12em;
+        }
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .product{
+        width: 40em;
+    }
+
+    .product-image{
+        width: 40em;
+    }
+  }
+
+  @media only screen and (max-width: 400px) {
+    .product{
+        width: 30em;
+    }
+  }

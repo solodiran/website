@@ -1,7 +1,6 @@
-import React from 'react'
+import React from 'react';
 import { createClient } from "contentful";
-import { Container } from 'react-bootstrap';
-import { Image } from 'react-bootstrap';
+import Image from 'next/image';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
 const client = createClient({
@@ -9,7 +8,7 @@ const client = createClient({
     accessToken: process.env.CONTENTFUL_ACCESS_KEY,
 })
 
-export const getStaticPaths = async() => {
+export const getStaticPaths = async () => {
     const res = await client.getEntries({
         content_type: 'wisata'
     })
@@ -41,22 +40,25 @@ export default function WisataDetails( { wisata }) {
     const { featured, judul, deskripsi } = wisata.fields 
     return (
         <div className='container'>
-            <section>
-                <Image
-                src={'https:' + featured.fields.file.url}
-                width={featured.fields.file.details.image.width}
-                height={featured.fields.file.details.image.height}
-                layout='intrinsic'
-                alt='Foto Produk'
-                />
-                <h2>{ judul }</h2>
-                <div>{documentToReactComponents(deskripsi)}</div>
+            <section className='body'>
+                <div className='image'>
+                    <Image
+                    src={'https:' + featured.fields.file.url}
+                    width={featured.fields.file.details.image.width}
+                    height={featured.fields.file.details.image.height}
+                    layout='intrinsic'
+                    alt='Foto Wisata'
+                    />
+                </div>
+                <h2>{ judul }</h2>  
+                <div className='text'>{documentToReactComponents(deskripsi)}</div>
             </section>
+
             <style jsx>{`
                 .container {
-                    display: flex; // make us of Flexbox
-                    align-items: center; // does vertically center the desired content
-                    justify-content: center; // horizontally centers single line items
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
                     text-align: center; 
                 }
                 

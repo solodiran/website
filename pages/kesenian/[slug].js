@@ -56,9 +56,9 @@ export default function KesenianDetails( { kesenian }) {
 
             <style jsx>{`
                 .container {
-                    display: flex; // make us of Flexbox
-                    align-items: center; // does vertically center the desired content
-                    justify-content: center; // horizontally centers single line items
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
                     text-align: center; 
                 }
                 

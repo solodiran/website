@@ -11,14 +11,13 @@
 
     @media only screen and (max-width: 1000px) {
       width: 30em;
-      height: 60em;
+      height: 50em;
       flex-direction: column;
     }
 
-    .img {
-      height: 20em;
-      width: 30em;
-    }
+    @media only screen and (max-width: 600px) {
+      max-width: 100vw;}
+
 
     .details{
       position: relative;
@@ -49,6 +48,7 @@
   
       .btn{
         position: absolute;
+        width: 16em;
         left: 50%;
         transform: translate(-50%, -50%);
         margin-top: 4em;

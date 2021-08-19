@@ -7,14 +7,14 @@ export default function produkCard({produk}) {
     const { thumbnail, judul, slug} = produk.fields
     return (
         <div className={styles.container}>
-            <div className='image'>
+            <div className={styles.image}>
                 <Image src={'https:' + thumbnail.fields.file.url} height={260} width={300} alt='Foto Produk' layout='intrinsic' />
             </div>
             <div className={styles.details}>
                 <h3>{ judul }</h3>
                 <div className={styles.btn}>
                     <Link href={'/produk/' + slug } passHref>
-                        <button> Lihat lebih detail</button>
+                        <button> Detail</button>
                     </Link>
                 </div>
             </div>

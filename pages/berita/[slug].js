@@ -1,7 +1,6 @@
 import React from 'react';
 import { createClient } from "contentful";
 import Image from 'next/image';
-import { Container } from 'react-bootstrap';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
 const client = createClient({
@@ -37,31 +36,42 @@ export const getStaticProps = async ({ params }) => {
     }
 }
 
-export default function BeritaDetails( { berita }) {
-    const { judul, tanggal, featured, konten, lokasi  } = berita.fields 
+export default function KesenianDetails( { berita }) {
+    const { judul, tanggal, featured, konten } = berita.fields 
     return (
-        <Container>
-            <section>
-                <Image
-                src={'https:' + featured.fields.file.url}
-                width={featured.fields.file.details.image.width}
-                height={featured.fields.file.details.image.height}
-                alt='Foto Produk'
-                />
+        <div className='container'>
+            <section className='body'>
+                <div className='image'>
+                    <Image
+                    src={'https:' + featured.fields.file.url}
+                    width={featured.fields.file.details.image.width}
+                    height={featured.fields.file.details.image.height}
+                    layout='intrinsic'
+                    alt='Foto Berita'
+                    />
+                </div>
                 <h2>{ judul }</h2>
+                <span>{ tanggal }</span>  
+                <div className='text'>{documentToReactComponents( konten )}</div>
             </section>
-            <section>
-                <span>{ tanggal }</span>
-                <span>{ lokasi }</span>
-            </section>
-            <div>{documentToReactComponents( konten )}</div>
-                
+
             <style jsx>{`
-                div {
+                .container {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    text-align: center; 
+                }
+                
+                .image {
+                    max-height: 50%;
+                }
+                
+                .text {
                     text-align: justify;
                 }
             `}
             </style>
-        </Container>
+        </div>
     )
 }

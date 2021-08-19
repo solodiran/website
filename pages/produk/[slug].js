@@ -49,7 +49,7 @@ export default function ProdukDetails( { produk }) {
                         width={featured.fields.file.details.image.width}
                         height={featured.fields.file.details.image.height}
                         alt='Foto Produk'
-                        layout='intrinsic'
+                        // layout='intrinsic'
                         className='img'
                         />
                     </section>
@@ -80,98 +80,109 @@ export default function ProdukDetails( { produk }) {
                 </div>
             </div>
             <style jsx>{`
-            html {
-            min-height: 100vh;
-            position: relative;
-            }
-
-            .fullscreen {
-                height: 100vh;
-                margin: 2rem 0;
-           }
-            .fullscreen .product {
-                height: 100vh;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-           }
-            @media only screen and (max-width: 1000px) {
-                .fullscreen .product {
-                    height: 50%;
-                    flex-direction: column;
-               }
-           }
-            .fullscreen .product .product-image {
-                width: 50%;
-                height: 100%;
-                background: #dfdfdf;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-           }
-            .fullscreen .product .product-image .img {
-                cursor: move;
-                width: 50%;
-           }
-            .fullscreen .product .product-details {
-                width: 50%;
-                height: 100%;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-           }
-            @media only screen and (max-width: 1000px) {
-                .fullscreen .product .product-details {
-                    margin-top: 10rem;
-               }
-           }
-            .fullscreen .product .product-details .inner {
-                width: 30em;
-                position: relative;
-           }
-            .fullscreen .product .product-details .inner .go-back {
-                cursor: pointer;
-                color: #282828;
-                text-decoration: none;
-                text-align: left;
-                position: absolute;
-                top: -7.75em;
-                left: 0;
-           }
-            @media only screen and (max-width: 1000px) {
-                .fullscreen .product .product-details .inner .go-back {
-                    top: -1.5em;
-               }
-           }
-            .fullscreen .product .product-details .inner .desc {
-                color: #424550;
-                font-weight: 300;
-                text-align: justify;
-           }
-            .fullscreen .product .product-details .inner .btn-row {
-                margin-top: 2rem;
-                display: flex;
-                align-items: center;
-           }
-            .fullscreen .product .product-details .inner .btn-row .btn {
-                cursor: pointer;
-                margin-left: 3rem;
-                border: none;
-                border-radius: 8px;
-                height: 3em;
-                font-size: 0.875rem;
-                text-transform: uppercase;
-                font-weight: 500;
-                letter-spacing: 0.06rem;
-           }
-           @media only screen and (max-width: 1000px) {
-            .container {
-                margin-bottom: 12em;
-              }
-       }
-        
-            
+html {
+    position: relative;
+}
+.container {
+    min-width: 100vw;
+}
+.fullscreen {
+    height: 100vh;
+    min-width: 100vw;
+    margin: 2rem 0;
+}
+.fullscreen .product {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.fullscreen .product .product-image {
+    width: 50%;
+    height: 100%;
+    background: #dfdfdf;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.fullscreen .product .product-image .img {
+    cursor: move;
+    width: 50%;
+}
+.fullscreen .product .product-details {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.fullscreen .product .product-details .inner {
+    width: 30em;
+    position: relative;
+}
+.fullscreen .product .product-details .inner .go-back {
+    cursor: pointer;
+    color: #282828;
+    text-decoration: none;
+    text-align: left;
+    position: absolute;
+    top: -7.75em;
+    left: 0;
+}
+.fullscreen .product .product-details .inner .desc {
+    color: #424550;
+    font-weight: 300;
+    text-align: justify;
+}
+.fullscreen .product .product-details .inner .btn-row {
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+}
+.fullscreen .product .product-details .inner .btn-row .btn {
+    cursor: pointer;
+    margin-left: 3rem;
+    border: none;
+    border-radius: 8px;
+    height: 3em;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 0.06rem;
+}
+@media only screen and (max-width: 1000px) {
+    .product {
+        flex-direction: column;
+        width: 50em;
+   }
+    .fullscreen .product .product-details {
+        margin-top: 10rem;
+   }
+    .product-details .product-image {
+        width: 100%;
+        height: 100%;
+   }
+    .fullscreen .product .product-details .inner .go-back {
+        top: -1.5em;
+   }
+    .container {
+        margin-bottom: 12em;
+   }
+}
+@media only screen and (max-width: 600px) {
+    .product {
+        width: 40em;
+   }
+    .product-image {
+        width: 40em;
+   }
+}
+@media only screen and (max-width: 400px) {
+    .product {
+        width: 30em;
+   }
+}
             `}</style>
         </div>
     )

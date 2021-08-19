@@ -19,7 +19,7 @@ export async function getStaticProps() {
 }
 export default function Wisata({ wisata }) {
     return (
-        <div className='container'>
+        <div>
             <h2 className='header'>Wisata Solodiran</h2>
             <div className='list-wisata'>
                 {wisata.map(wisata => (
